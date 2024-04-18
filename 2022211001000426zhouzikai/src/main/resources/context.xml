@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+    <!-- 定义全局数据源 -->
+    <Resource name="jdbc/UserDatabase"
+              auth="Container"
+              type="javax.sql.DataSource"
+              maxTotal="100"
+              maxIdle="30"
+              maxWaitMillis="10000"
+              username="sa"
+              password="123456"
+              driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+              url="jdbc:sqlserver://localhost:1433;databaseName=userdb;encrypt=true;trustServerCertificate=true"
+    />
+
+    <!-- 在当前Web应用中引用全局数据源 -->
+    <ResourceLink name="jdbc/UserDatabase" global="jdbc/UserDatabase" type="javax.sql.DataSource"/>
+</Context>
